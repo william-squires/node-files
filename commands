@@ -1,0 +1,10 @@
+node step1.js one.txt 
+node step1.js bad.txt
+
+node step2.js -f one.txt
+node step2.js -f bad.txt
+node step2.js -u http://numbersapi.com/10
+node step2.js -u https://jkfjsdifojhwefnbwjbefwi.com
+node step2.js -f
+node step2.js -u
+node step2.js -wtf one.txt

@@ -43,10 +43,30 @@ async function webCat(url) {
 }
 
 if (process.argv.indexOf(FILE_FLAG) !== -1) {
-    cat(process.argv[process.argv.indexOf(FILE_FLAG) + 1]);
+
+    const flagIndex = process.argv.indexOf(FILE_FLAG)
+
+    if (process.argv[flagIndex + 1]) {
+        cat(process.argv[flagIndex + 1]);
+    }
+    else {
+        //probably better to throw a real error here?
+        console.log("Error: no file provided");
+        process.exit(1);
+    }
+
 }
 else if (process.argv.indexOf(URL_FLAG) !== -1) {
-    webCat(process.argv[process.argv.indexOf(URL_FLAG) + 1]);
+
+    const flagIndex = process.argv.indexOf(URL_FLAG)
+
+    if (process.argv[flagIndex + 1]) {
+        webCat(process.argv[flagIndex + 1]);
+    }
+    else {
+        console.log("Error: no url provided");
+        process.exit(1);
+    }
 }
 else {
     console.log("Error: no valid flag found");
